@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REGISTRATION SITE</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0;
+           /* background-color:whitesmoke;*/
+            /*background-image: url('img/photo.jpg');*/
+            background-position: center;
+            background-image: url('img/photo.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+
+        }
+
+        h1 {
+            position: absolute;
+            top: 630px;
+            color: #dc5959;
+            font-size: 24px;
+            text-align: center;
+        }
+
+
+       
+        .entry {
+            text-align: center;
+            padding: 20px;
+            /*border: 1px solid #cdbdbd;
+            border-radius: 10px;*/
+            box-shadow: 0 4px 8px rgba(244, 243, 243, 0.1);
+            
+        }
+
+       
+        .email, .password,.name {
+            margin-bottom: 20px;
+        }
+
+        .eb, .p,.un {
+            border-radius: 15px;
+            color: black;
+            height: 40px;
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .ebt, .pt ,.ut{
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Arial;
+            margin-right: 10px;
+        }
+
+        
+        .sign{
+            background-color: rgb(81, 142, 255);
+            border-radius: 8px;
+            height: 40px;
+            width: 150px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            border: none;
+            margin: 10px;
+        }
+
+         .sign:hover {
+            background-color: rgb(65, 120, 204);
+        }
+
+        /*for userme icon*/
+
+        .icon{
+            position: relative;
+        }
+
+        
+
+        .ic {
+            position: absolute;
+            top: 50%;
+            left: 290px; 
+            transform: translateY(-50%);
+            height: 30px; 
+            width: 30px; 
+        }
+        
+        .ic img{
+             width: 100%; 
+             height: 100%; 
+             object-fit: contain; 
+            }
+
+        /*for email icon*/    
+
+        .icon1{
+            position: relative;
+        }
+
+        .ic1 {
+            position: absolute;
+            top: 40%;
+            left: 290px; 
+            transform: translateY(-50%);
+            height: 30px; 
+            width: 30px; 
+        }
+
+        .ic1 img{
+             width: 100%; 
+             height: 100%; 
+             object-fit: contain; 
+            }
+
+
+        /*icon for password*/
+
+        .icon2{
+            position: relative;
+        }
+
+        .ic2 {
+            position: absolute;
+            top: 50%;
+            left: 290px; 
+            transform: translateY(-50%);
+            height: 30px; 
+            width: 30px; 
+        }
+
+        .ic2 img{
+             width: 100%; 
+             height: 100%; 
+             object-fit: contain; 
+            }
+        
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <h1>ALREADY HAVE AN ACCOUNT? CLICK <strong style="color: rgb(65, 120, 204);"><a href="1pg.html">LOGIN</a></strong> </h1>
+    
+
+    <div class="entry">
+        <div class="email">
+            <p class="ebt">EMAIL </p>
+            <div class="icon1">
+                <input class="eb" type="text" placeholder="EMAIL">
+                 <span class="ic1"><img src="pic/e2.png" ></span>
+            </div>
+
+            
+        </div>
+        <div class="name">
+            <p class="ut">USERNAME</p>
+           
+            <div class="icon">
+                <input class="un" type="USERNAME" placeholder="USERNAME" >
+                <span class="ic"><img src="pic/user.png" ></span>
+            </div>
+            
+        </div>
+        <div class="password">
+            <p class="pt">PASSWORD</p>
+
+            <div class="icon2">
+                <input class="p" type="password" placeholder="PASSWORD"  id="password">
+                <span class ="ic2"><img src="pic/imgi1.png" id="eyeicon"></span>
+            </div>
+
+
+            
+        </div>
+        <div>
+            <button class="sign">SIGNIN</button>
+           
+        </div>
+    </div>
+
+
+    <script>
+
+        let eyeicon =document.getElementById("eyeicon");
+        let password =document.getElementById("password");
+        eyeicon.onclick=function()
+        {
+            if(password.type=="password")
+            {
+                password.type="text";
+                eyeicon.src="pic/imgi1.jpeg";
+            }
+            else
+            {
+                password.type="password";
+                eyeicon.src="pic/imgi2.png";
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

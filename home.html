@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #45a049;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to AgriTech</h1>
+        <p>Your one-stop solution for agricultural e-commerce</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="seller.html">Seller</a>
+        <a href="customer.html">Customer</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Empowering Farmers, Connecting Communities</h2>
+        <p>Join AgriTech today and experience seamless buying and selling of agricultural products.</p>
+        <button onclick="navigateTo('seller')">Get Started</button>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="feature">
+            <img src="pic/easy.png" alt="Easy to Use">
+            <h3>Easy to Use</h3>
+            <p>Our platform is designed to be simple and intuitive for everyone.</p>
+        </div>
+        <div class="feature">
+            <img src="pic/trans.png" alt="Secure Transactions">
+            <h3>Secure Transactions</h3>
+            <p>Enjoy safe and secure payment options for all your transactions.</p>
+        </div>
+        <div class="feature">
+            <img src="pic/24.png" alt="24/7 Support">
+            <h3>24/7 Support</h3>
+            <p>Our support team is always available to assist you.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About AgriTech</h2>
+        <p>
+            AgriTech is a revolutionary platform that connects farmers and buyers directly, eliminating middlemen and ensuring fair prices.
+            Whether you're a farmer looking to sell your produce or a buyer searching for fresh, high-quality products, AgriTech is here to help.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 AgriTech. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>Follow us on: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+
+    <script>
+        function navigateTo(role) {
+            if (role === 'seller') {
+                window.location.href = 'seller.html';
+            } else if (role === 'customer') {
+                window.location.href = 'customer.html';
+            }
+        }
+    </script>
+</body>
+</html>

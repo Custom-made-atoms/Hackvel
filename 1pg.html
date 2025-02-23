@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Site</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh; 
+            margin: 0;
+            overflow: hidden;
+            /*background-color:whitesmoke; */
+
+
+            /*for animation bacck ground fixing*/
+            background-image: url('img/img6.jpeg');
+            background-repeat: no-repeat;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /*for time out
+            filter: grayscale(100%);
+            transition: filter 2s ease;*/
+            
+            animation:grayscaleAnimation 5s infinite;
+            
+        }
+
+        /*for time out
+        body:hover {
+            filter: grayscale(0%); \
+        }*/
+
+
+
+        h1 {
+            position: absolute;
+            top: 600px;
+            color: #dc5959;
+            font-size: 24px;
+            text-align: center;
+        }
+
+
+       
+        .entry {
+            text-align: center;
+            padding: 20px;
+            /*border: 1px solid #cdbdbd;
+            border-radius: 10px;*/
+            box-shadow: 0 4px 8px rgba(244, 243, 243, 0.1);
+            background-position: center;
+
+            /*
+            background-image: url('img/photo.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+*/
+            
+        }
+
+       
+        .email.password{
+            margin-bottom: 20px;
+          
+        }
+        
+
+    
+
+        .eb, .p {
+
+            border-radius: 15px;
+            color: black;
+            height: 40px;
+            width:300px;
+            padding: 10px;
+            font-size: 16px;
+            
+            
+            
+        }
+        
+
+        .ebt, .pt {
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Arial;
+            margin-right: 10px;
+        }
+        
+        .log{
+            background-color: rgb(81, 142, 255);
+            border-radius: 8px;
+            height: 40px;
+            width: 150px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            border: none;
+            margin: 10px;
+        }
+
+        .log:hover{
+            background-color: rgb(65, 120, 204);
+        }
+
+
+
+        /*icon for eyecon*/
+        
+        .icon2{
+            position: relative;
+           
+        }
+
+        .ic2 {
+            position: absolute;
+            top: 50%;
+            left: 290px; 
+            transform: translateY(-50%);
+            height: 30px; 
+            width: 30px; 
+            
+            
+        }
+
+        .ic2 img{
+             width: 100%; 
+             height: 100%; 
+             object-fit: contain; 
+            
+            }
+
+
+
+        
+        /*icon for mail*/
+        .icon1
+        {
+            position: relative;
+        }
+
+        .ic1 {
+            position: absolute;
+            top: 42%;
+            left: 290px; 
+            transform: translateY(-50%);
+            height: 30px; 
+            width: 30px; 
+        }
+
+        .ic1 img{
+             width: 100%; 
+             height: 100%; 
+             object-fit: contain; 
+            }
+
+            
+
+       /*buble animation*/
+
+
+      .bubble {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(188, 70, 70, 0.6);
+            border-radius: 50%;
+            animation: moveBubble 5s infinite ease-in-out;
+        }
+
+
+        @keyframes moveBubble {
+            0% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateX(-30%) translateY(-200px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(50%) translateY(-400px);
+                opacity: 0.8;
+            }
+        }
+
+        /*for infinite change*/
+
+        @keyframes grayscaleAnimation {
+            0% {
+                filter: grayscale(100%);
+            }
+            50% {
+                filter: grayscale(0%);
+            }
+            100% {
+                filter: grayscale(100%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+     <h1> CLICK <strong style="color: rgb(65, 120, 204);"><a href="2pg.html"> SIGNIN </a></strong> TO REGISTER FOR A NEW ACCOUNT</h1>
+    
+
+    <div class="entry">
+        <div class="email">
+            <p class="ebt">EMAIL </p>
+            <div class="icon1"> 
+                <input class="eb" type="text" placeholder="EMAIL" spellcheck="true">
+                <span class="ic1"><img src="pic/e2.png" ></span>
+            </div>
+            
+        </div>
+        <div class="password">
+            <p class="pt">PASSWORD</p>
+            <div class="icon2">
+                <input  class="p" type="password" placeholder="PASSWORD"  id="password">
+                <span class ="ic2"><img src="pic/imgi1.png" id="eyeicon"></span>
+             </div>
+        </div>
+        <div>
+            <button class="log">LOGIN</button>
+           
+        </div>
+    </div>
+
+
+        <div class="bubble"></div>
+
+        <script>
+
+            /*script for buble animation*/
+
+
+            const numberOfBubbles = 10; 
+
+            for (let i = 0; i < numberOfBubbles; i++)
+             {
+                    let bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    bubble.style.left = `${Math.random() * 100}%`; 
+                    bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; 
+                     document.body.appendChild(bubble);
+
+            }
+
+
+
+
+            /*script for eyecon*/
+            let eyeicon =document.getElementById("eyeicon");
+            let password =document.getElementById("password");
+            eyeicon.onclick=function()
+            {
+                if(password.type=="password")
+                {
+                    password.type="text";
+                    eyeicon.src="pic/imgi1.png";
+                }
+                else
+                {
+                    password.type="password";
+                    eyeicon.src="pic/imgi2.png";
+                }
+            };
+
+
+
+            /*for background image timeout
+
+            setTimeout(function() {
+            document.body.style.filter = 'grayscale(0%)';  
+        }, 3000); */
+
+
+        </script>
+
+
+
+    
+
+       
+</body>
+</html>
