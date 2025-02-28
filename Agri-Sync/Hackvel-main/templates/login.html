@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agri-Sync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+    <style>
+      /* Optional inline styles for the eye icon position */
+      .password-container {
+          position: relative;
+      }
+      .toggle-password {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <h2>Agri-Sync</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="{{ url_for('signup') }}" method="POST">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="{{ url_for('google_login') }}" class="social"><i class="fab fa-google"></i></a>
+                </div>
+                <span>or use your email</span>
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <select name="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="customer">Customer</option>
+                    <option value="farmer">Farmer</option>
+                </select>
+                <div class="password-container">
+                    <input type="password" name="password" placeholder="Password" required minlength="6" id="signupPassword" />
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('signupPassword')"></i>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="{{ url_for('login') }}" method="POST">
+                <h1>Sign In</h1>
+                <div class="social-container">
+                    <a href="{{ url_for('google_login') }}" class="social"><i class="fab fa-google"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" name="email" placeholder="Email" required />
+                <div class="password-container">
+                    <input type="password" name="password" placeholder="Password" required minlength="6" id="loginPassword" />
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('loginPassword')"></i>
+                </div>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us, please log in with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details to create an account</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      // Toggle password visibility function
+      function togglePassword(id) {
+          var passwordField = document.getElementById(id);
+          var type = passwordField.getAttribute("type");
+          if (type === "password") {
+              passwordField.setAttribute("type", "text");
+          } else {
+              passwordField.setAttribute("type", "password");
+          }
+      }
+    </script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

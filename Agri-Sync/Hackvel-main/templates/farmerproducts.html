@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech - Seller</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Seller Dashboard</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="farmerhome.html">Home</a>
+        <a href="#previous-sales"Previous Sales</a>
+        <a href="profile.html">View Profile</a>
+    </nav>
+
+    <!-- Form to Add Items -->
+    <div class="container">
+        <h2>Add New Item</h2>
+        <input type="text" id="itemName" placeholder="Item Name">
+        <input type="number" id="itemPrice" placeholder="Price per kg (in ₹)">
+        <textarea id="itemDescription" placeholder="Item Description"></textarea>
+        <input type="file" id="itemImage" class="file-input" accept="image/*">
+        <button onclick="postItem()">Post Item</button>
+    </div>
+
+    <!-- List of Previously Added Items -->
+    <div class="item-list" id="itemList">
+        <h2>Previously Added Items</h2>
+        <!-- Items will be dynamically inserted here -->
+    </div>
+
+    <script src="/static/js/farmerproducts.js"></script>
+</body>
+</html>
