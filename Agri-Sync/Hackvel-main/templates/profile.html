@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech - Profile</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<nav>
+    <a href="home.html">🏠 Home</a>
+    <a href="customer.html">🛒 Continue Shopping</a>
+    <a href="seller.html">🔄 Switch to Seller Mode</a>
+    <a href="profile.html">👤 View Profile</a>
+</nav>
+<body>
+    <header>
+        <div class="burger-menu" onclick="openSidebar()">&#9776;</div>
+        <h1>Profile</h1>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+        <a href="home.html">Home</a>
+        <a href="seller.html">Switch to Seller Mode</a>
+        <a href="customer.html">Switch to Customer Mode</a>
+    </div>
+
+    <div class="container">
+        <form id="profileForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="John Doe">
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="john@example.com">
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>
